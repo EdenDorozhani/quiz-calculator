@@ -32,21 +32,13 @@ const Quiz = () => {
   const onNextQuestion = () => {
     setUserAnswers([]);
     if (page < questions?.length) {
-      setPage((prevState) => {
-        if (prevState < questions.length) {
-          return prevState + 1;
-        }
-      });
+      setPage(page + 1);
     }
   };
 
   const onPrevQuestion = () => {
     if (page > 1) {
-      setPage((prevState) => {
-        if (prevState > 1) {
-          return prevState - 1;
-        }
-      });
+      setPage(page - 1);
     }
   };
 

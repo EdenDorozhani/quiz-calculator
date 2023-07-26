@@ -1,4 +1,4 @@
-const FilterInputs = ({ index, value, onChangeHandler, questionFilters }) => {
+const FilterInputs = ({ value, onChangeHandler, questionFilters }) => {
   return (
     <div>
       {value === "numberOfQuestions" ? (

@@ -12,7 +12,6 @@ const QuestionSearch = () => {
   });
   const [questionFilters, setQuestionFilters] = useState([]);
   const navigate = useNavigate();
-  console.log("questionFilters", questionFilters);
 
   useEffect(() => {
     const filters = getQuestionFilters();
