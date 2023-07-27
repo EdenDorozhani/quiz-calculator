@@ -6,16 +6,19 @@ const ButtonsContainer = ({
   submitResults,
   page,
   questions,
+  nextButtonContent,
+  backButtonContent,
+  finishButtonContent,
 }) => {
   return (
     <div className="button-container">
       <button className="cancel" onClick={onPrevQuestion}>
-        BACK
+        {backButtonContent}
       </button>
       {page != questions.length ? (
-        <Button action={onNextQuestion} content={"NEXT"} />
+        <Button action={onNextQuestion} content={nextButtonContent} />
       ) : (
-        <Button action={submitResults} content={"FINISH"} />
+        <Button action={submitResults} content={finishButtonContent} />
       )}
     </div>
   );

@@ -133,6 +133,9 @@ const Quiz = () => {
           onNextQuestion={onNextQuestion}
           submitResults={submitResults}
           onPrevQuestion={onPrevQuestion}
+          nextButtonContent={"NEXT"}
+          backButtonContent={"BACK"}
+          finishButtonContent={"FINISH"}
         />
       </div>
     </div>
