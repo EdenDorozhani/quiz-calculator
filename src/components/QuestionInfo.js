@@ -1,8 +1,8 @@
-const QuestionInfo = ({ page, actualQuestion }) => {
+const QuestionInfo = ({ labelContent, title }) => {
   return (
     <div className="question-handler">
-      <label>Question {page}</label>
-      <h2>{actualQuestion?.title}</h2>
+      <label>{labelContent}</label>
+      <h2>{title}</h2>
     </div>
   );
 };

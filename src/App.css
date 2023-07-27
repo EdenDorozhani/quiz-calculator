@@ -46,6 +46,7 @@ button:hover {
   font-size: small;
   margin-bottom: 10px;
 }
+
 .filter-questions-form input,
 .filter-questions-form select {
   width: 340px;
@@ -55,16 +56,6 @@ button:hover {
   border: 1px solid rgb(0, 74, 6);
   border-radius: 7px;
   background-color: white;
-}
-
-.filter-questions-form button {
-  margin-top: 22px;
-  border: none;
-  width: 200px;
-  background-color: rgb(0, 74, 6);
-  color: white;
-  height: 35px;
-  border-radius: 7px;
 }
 
 .questions-container {
@@ -105,11 +96,24 @@ button:hover {
   flex-direction: column;
   gap: 15px;
 }
+.answer {
+  border: 1px solid rgb(0, 74, 6);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 40px;
+}
 
 .answer:hover {
   background-color: rgb(0, 74, 6) !important;
   color: white !important;
   cursor: pointer;
+}
+
+.active {
+  background-color: rgb(0, 74, 6);
+  color: white;
 }
 
 .answer div {
@@ -146,6 +150,8 @@ button:hover {
   border: none;
   border-radius: 10px;
   color: white;
+  width: 150px;
+  height: 30px;
 }
 
 .results-container {
@@ -159,13 +165,4 @@ button:hover {
   margin-top: 140px;
   gap: 20px;
   justify-content: center;
-}
-
-.new-quiz {
-  height: 25px;
-  width: 150px;
-  font-size: 10px;
-  border: none;
-  background-color: rgb(0, 74, 6);
-  color: white;
 }

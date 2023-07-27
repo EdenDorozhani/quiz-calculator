@@ -3,6 +3,7 @@ import { getFilteredQuestions, getQuestionFilters } from "../helpers";
 
 import { useNavigate } from "react-router-dom";
 import FilterInputs from "../components/FilterInputs";
+import Button from "../components/Button";
 
 const QuestionSearch = () => {
   const [questionFiltersValues, setQuestionFiltersValues] = useState({
@@ -40,17 +41,23 @@ const QuestionSearch = () => {
           <h2>Generate Quiz</h2>
           {Object.keys(questionFilters).map((value, index) => {
             return (
-              <FilterInputs
-                key={index}
-                value={value}
-                index={index}
-                onChangeHandler={onChangeHandler}
-                questionFilters={questionFilters}
-              />
+              <div key={index}>
+                {value === "numberOfQuestions" ? (
+                  <label>Number of Questions</label>
+                ) : (
+                  <label>{value[0].toUpperCase() + value.slice(1)}</label>
+                )}
+                <FilterInputs
+                  value={value}
+                  index={index}
+                  onChangeHandler={onChangeHandler}
+                  questionFilters={questionFilters}
+                  defaultValue={"Choose Value"}
+                />
+              </div>
             );
           })}
-
-          <button onClick={onQuestionSearch}>Submit</button>
+          <Button action={onQuestionSearch} content={"Submit"} />
         </div>
       </div>
     </>

@@ -2,7 +2,7 @@ const ProgressBar = ({ page, questions }) => {
   const progressBarFiller = {
     transition: "all 0.3s",
     borderRadius: "10px",
-    width: (page / questions?.length) * 100 + "%",
+    width: (page > 0 && page / questions?.length) * 100 + "%",
     backgroundColor: "rgb(0, 74, 6)",
     height: "15px",
   };

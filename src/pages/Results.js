@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import Button from "../components/Button";
 
 const Results = () => {
   const navigate = useNavigate();
@@ -20,9 +21,7 @@ const Results = () => {
         <p>
           You won {state?.userPoints} points from {state?.total} !
         </p>
-        <button className="new-quiz" onClick={() => navigate("/")}>
-          TRY AGAIN!
-        </button>
+        <Button action={() => navigate("/")} content={"TRY AGAIN!"} />
       </div>
     </div>
   );

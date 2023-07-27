@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 const ButtonsContainer = ({
   onPrevQuestion,
   onNextQuestion,
@@ -11,13 +13,9 @@ const ButtonsContainer = ({
         BACK
       </button>
       {page != questions.length ? (
-        <button className="next" onClick={onNextQuestion}>
-          NEXT
-        </button>
+        <Button action={onNextQuestion} content={"NEXT"} />
       ) : (
-        <button className="next" onClick={submitResults}>
-          FINISH
-        </button>
+        <Button action={submitResults} content={"FINISH"} />
       )}
     </div>
   );

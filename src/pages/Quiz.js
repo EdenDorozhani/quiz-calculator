@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import AlternativeList from "../components/AlternativeList";
+
 import ProgressBar from "../components/ProgressBar";
 import ButtonsContainer from "../components/ButtonsContainer";
 import QuestionInfo from "../components/QuestionInfo";
+import AlternativeItem from "../components/AlternativeItem";
 
 const Quiz = () => {
   const [page, setPage] = useState(1);
@@ -103,12 +104,29 @@ const Quiz = () => {
     <div>
       <div className="questions-container">
         <ProgressBar page={page} questions={questions} />
-        <QuestionInfo page={page} actualQuestion={actualQuestion} />
-        <AlternativeList
-          getUserAnswers={getUserAnswers}
-          actualQuestion={actualQuestion}
-          userAnswers={userAnswers}
+        <QuestionInfo
+          labelContent={`Question ${page}`}
+          title={actualQuestion?.title}
         />
+
+        <div className="answers-container">
+          {actualQuestion?.answers.map((answer, index) => {
+            let selected;
+            if (userAnswers?.includes(index)) {
+              selected = true;
+            }
+            return (
+              <AlternativeItem
+                selected={selected}
+                answer={answer}
+                index={index}
+                getUserAnswers={getUserAnswers}
+                key={index}
+              />
+            );
+          })}
+        </div>
+
         <ButtonsContainer
           questions={questions}
           page={page}

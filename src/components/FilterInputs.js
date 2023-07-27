@@ -1,24 +1,22 @@
-const FilterInputs = ({ value, onChangeHandler, questionFilters }) => {
+const FilterInputs = ({
+  value,
+  onChangeHandler,
+  questionFilters,
+  defaultValue,
+}) => {
   return (
-    <div>
-      {value === "numberOfQuestions" ? (
-        <label>Number of Questions</label>
-      ) : (
-        <label>{value[0].toUpperCase() + value.slice(1)}</label>
-      )}
-      <select name={value} onChange={onChangeHandler}>
-        <option disabled selected hidden>
-          Choose Value
-        </option>
-        {questionFilters[value].map((value, index) => {
-          return (
-            <option key={index} value={value}>
-              {value}
-            </option>
-          );
-        })}
-      </select>
-    </div>
+    <select name={value} onChange={onChangeHandler}>
+      <option disabled selected hidden>
+        {defaultValue}
+      </option>
+      {questionFilters[value].map((value, index) => {
+        return (
+          <option key={index} value={value}>
+            {value}
+          </option>
+        );
+      })}
+    </select>
   );
 };
 
